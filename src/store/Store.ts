@@ -29,7 +29,8 @@ export default class Store {
       this.setAuth(true)
       this.setUser(user)
     } catch (err: any) {
-      console.log(err.pesponse?.data?.message)
+      console.log(err.response?.data?.message)
+      return new Error(err.response?.data?.message)
     }
   }
 
@@ -42,7 +43,8 @@ export default class Store {
       this.setAuth(true)
       this.setUser(user)
     } catch (err: any) {
-      console.log(err.pesponse?.data?.message)
+      console.log(err.response?.data?.message)
+      return new Error(err.response?.data?.message)
     }
   }
 
@@ -54,7 +56,8 @@ export default class Store {
       this.setAuth(false)
       this.setUser({} as IUser)
     } catch (err: any) {
-      console.log(err.pesponse?.data?.message)
+      console.log(err.response?.data?.message)
+      return new Error(err.response?.data?.message)
     }
   }
 
@@ -68,7 +71,8 @@ export default class Store {
       this.setAuth(true)
       this.setUser(response.data.user)
     } catch (err: any) {
-      console.log(err.pesponse?.data?.message)
+      console.log(err.response?.data?.message)
+      return new Error(err.response?.data?.message)
     } finally {
       this.setIsCheckingAuthProcess(false)
     }
