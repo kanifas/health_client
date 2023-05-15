@@ -1,6 +1,6 @@
 import React, { FC, useCallback, useContext, useState, ChangeEvent } from 'react'
 import { Button, Checkbox, Form, Input, Space, Typography } from 'antd';
-import { Context } from '..';
+import { Context } from '../..';
 import { observer } from 'mobx-react-lite'
 import styled from 'styled-components'
 

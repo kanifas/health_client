@@ -1,9 +1,8 @@
-import React, { useContext, useRef } from 'react';
-import AuthForm from './components/AuthForm';
-import { Button } from 'antd';
-import './App.css';
-import { Context } from '.';
-import { observer } from 'mobx-react-lite';
+import React, { useContext, useRef } from 'react'
+import { observer } from 'mobx-react-lite'
+import Auth from './components/Auth'
+import Layout from './components/Layout'
+import { Context } from '.'
 
 function App() {
   const { store } = useContext(Context)
@@ -26,15 +25,14 @@ function App() {
   }
 
   if (!store.isAuth) {
-    return <AuthForm />
+    return <Auth />
   }
 
   return (
     <div className="App">
-      <h2>{store.isAuth ? 'Авторизован' : 'Не авторизован'}</h2>
-      <Button type="primary" onClick={() => store.logout()}>
-        Logout
-      </Button>
+      <Layout />
+      {/* <h2>{store.isAuth ? 'Авторизован' : 'Не авторизован'}</h2>
+      <Button type="primary" onClick={() => store.logout()}>Logout</Button> */}
     </div>
   );
 }
