@@ -22,4 +22,11 @@ export const Block = styled.div<IStyledBlockProps>`
     }
     return height
   }};
+  width: ${({width}) => {
+    if (!width) return 'auto'
+    if (typeof width === 'number') {
+      return `${width}px`
+    }
+    return width
+  }};  
 `

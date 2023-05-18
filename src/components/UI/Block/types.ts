@@ -5,4 +5,5 @@ export interface IStyledBlockProps extends HTMLAttributes<HTMLDivElement> {
   align?: 'start' | 'center' | 'end' | 'stretch' | 'baseline'
   justify?: 'start' | 'center' | 'space-between' | 'space-around' | 'space-evenly'
   height?: number | string
+  width?: number | string
 }

@@ -3,7 +3,7 @@ import styled, { StyledProps } from 'styled-components'
 export const Header = styled.div`
   position: sticky;
   top: 0;
-  zIndex: 3;
+  z-index: 3;
   //width: 100%;
   background: #f8f9fa;
   height: var(--layout-header-height);

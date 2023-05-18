@@ -11,10 +11,18 @@ const Block: FC<IProps> = ({
   flex,
   align,
   height,
+  width,
+  justify,
   ...rest
 }) => {
   return (
-    <S.Block flex={flex} align={align} height={height} {...rest}>
+    <S.Block
+      flex={flex}
+      align={align}
+      justify={justify}
+      height={height}
+      {...rest}
+    >
       {children}
     </S.Block>
   )

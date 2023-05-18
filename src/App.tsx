@@ -1,40 +1,32 @@
-import React, { useContext, useRef } from 'react'
+import React, { useRef } from 'react'
 import { observer } from 'mobx-react-lite'
 import Auth from './components/Auth'
 import Layout from './components/Layout'
-import { Context } from '.'
+import { LoadingOutlined } from '@ant-design/icons'
+import { useStore } from './store/store'
 
 function App() {
-  const { store } = useContext(Context)
+  const { userStore } = useStore()
   const isCheckedAuth = useRef(false)
 
   if (localStorage.getItem('accessToken') && !isCheckedAuth.current) {
-    store.checkAuth()
+    userStore.checkAuth()
     isCheckedAuth.current = true
   }
 
-  // По рендеру успевает появиться форма авторизации, поэтому вместо эффекта использовал реф (выше)
-  // useEffect(() => {
-  //   if (localStorage.getItem('accessToken')) {
-  //     store.checkAuth()
-  //   }
-  // }, [])
-
-  if (store.isCheckingAuthProcess) {
-    return <div>Загрузка...</div>
+  if (userStore.isCheckingAuthProcess) {
+    return (
+      <div style={{position: 'fixed', left: '50%', top: '50%', transform: 'translate(-50%, -200%)'}}>
+        <LoadingOutlined style={{ color: 'green', fontSize: 40 }} />
+      </div>
+    )
   }
 
-  if (!store.isAuth) {
+  if (!userStore.isAuth) {
     return <Auth />
   }
 
-  return (
-    <div className="App">
-      <Layout />
-      {/* <h2>{store.isAuth ? 'Авторизован' : 'Не авторизован'}</h2>
-      <Button type="primary" onClick={() => store.logout()}>Logout</Button> */}
-    </div>
-  );
+  return <Layout />
 }
 
 export default observer(App)

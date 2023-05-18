@@ -9,8 +9,8 @@ interface IProps {
 const Footer: FC<IProps> = () => {
   return (
     <S.Footer>
-      <Block>
-        Footer
+      <Block flex align="center" justify="center" width="100%" height="100%">
+        Ant Design ©2023 Created by Ant UED
       </Block>
     </S.Footer>
   )
