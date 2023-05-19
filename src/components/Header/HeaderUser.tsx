@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { observer } from 'mobx-react-lite'
 import { Dropdown, Button, Typography, Space, Avatar, Badge } from 'antd'
 import type { MenuProps } from 'antd'
 import { UserOutlined, DownOutlined, LogoutOutlined } from '@ant-design/icons'
@@ -28,6 +29,7 @@ const Header: FC = () => {
   return (
     <Space size="middle">
       {/* {`${getRoleName(role)} ${speciality.name ? `(${speciality.name})` : ''}`} */}
+      {`${getRoleName(userStore.user.role)}`}
 
       <Dropdown menu={{ items }}>
         { /* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
@@ -45,4 +47,4 @@ const Header: FC = () => {
   )
 }
 
-export default Header
+export default observer(Header)

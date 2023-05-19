@@ -1,4 +1,4 @@
-import React, { FC, useState, useCallback, useEffect, MouseEvent } from 'react'
+import React, { FC, useState, useCallback, useEffect } from 'react'
 import type { RadioChangeEvent } from 'antd'
 import { Button, Modal, Table, Typography, Radio } from 'antd'
 import { observer } from 'mobx-react-lite'
@@ -17,6 +17,7 @@ const Role: FC<{id: string, role: number}> = ({id, role}) => {
   const onChange = useCallback(async ({ target: { value } }: RadioChangeEvent) => {
     await userStore.updateUser({id, role: value})
     setValue(value)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, value])
 
   return (
@@ -36,12 +37,14 @@ const ConfigureUsersModal: FC = () => {
 
   useEffect(() => {
     userStore.fetchUsers()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const deleteUser = useCallback(async (id: string, name: string) => {
     const shure = window.confirm(`Подтвердите удаление ${name}`)
     if (!shure) return;
     await userStore.deleteUser(id)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (userStore.users.length === 0) {

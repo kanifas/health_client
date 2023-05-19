@@ -1,4 +1,4 @@
-import styled, { StyledProps } from 'styled-components'
+import styled from 'styled-components'
 
 export const Footer = styled.div`
   background: #f5f5f5;
