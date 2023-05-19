@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite'
 import { Dropdown, Button, Typography, Space, Avatar, Badge } from 'antd'
 import type { MenuProps } from 'antd'
 import { UserOutlined, DownOutlined, LogoutOutlined } from '@ant-design/icons'
-import { useStore } from '../../store/store'
+import { useStore } from '../../store'
 import { roles } from '../../utils/constants'
 import { getRoleName } from '../../utils/user/user'
 

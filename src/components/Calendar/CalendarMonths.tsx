@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 import { Tabs } from 'antd'
 import type { TabsProps } from 'antd'
-import { useStore } from '../../store/store'
+import { useStore } from '../../store'
 
 
 const CalendarMonths: FC = () => {

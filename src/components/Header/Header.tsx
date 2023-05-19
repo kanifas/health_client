@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite'
 import * as S from './Header.styles'
 import User from './HeaderUser'
 import Block from '../UI/Block'
-import { useStore } from '../../store/store'
+import { useStore } from '../../store'
 import { monthNames } from '../../utils/constants'
 
 const Header: FC = () => {

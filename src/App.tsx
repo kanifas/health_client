@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite'
 import Auth from './components/Auth'
 import Layout from './components/Layout'
 import { LoadingOutlined } from '@ant-design/icons'
-import { useStore } from './store/store'
+import { useStore } from './store'
 
 function App() {
   const { userStore } = useStore()

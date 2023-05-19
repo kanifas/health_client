@@ -2,7 +2,7 @@ import React, { FC, useState, useCallback, useEffect } from 'react'
 import type { RadioChangeEvent } from 'antd'
 import { Button, Modal, Table, Typography, Radio } from 'antd'
 import { observer } from 'mobx-react-lite'
-import { useStore } from '../../store/store'
+import { useStore } from '../../store'
 import { getShortRoleName } from '../../utils/user/user'
 
 const Role: FC<{id: string, role: number}> = ({id, role}) => {
