@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { observer } from 'mobx-react-lite'
 import * as S from './Header.styles'
 import User from './HeaderUser'
-import Block from '../UI/Block'
+import { Block } from '..'
 import { useStore } from '../../store'
 import { monthNames } from '../../utils/constants'
 

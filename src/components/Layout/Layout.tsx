@@ -1,9 +1,6 @@
 import React, { FC } from 'react'
 import Layout from './Layout.styles'
-import Header from '../Header'
-import Content from '../Content'
-import Footer from '../Footer'
-import ConfigureUsersModal from '../Modal/ConfigureUsersModal'
+import { Header, Content, Footer, ConfigureUsersModal } from '..'
 
 const LayoutComponent: FC = () => {
   return (

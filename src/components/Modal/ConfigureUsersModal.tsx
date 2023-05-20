@@ -79,8 +79,8 @@ const ConfigureUsersModal: FC = () => {
     <Modal
       title="Управление пользователями"
       open={userStore.isShowConfigureUsersModal}
-      onOk={() => userStore.isShowConfigureUsersModal = false}
-      onCancel={() => userStore.isShowConfigureUsersModal = false}
+      onOk={() => userStore.closeConfigureUserModal()}
+      onCancel={() => userStore.closeConfigureUserModal()}
       width={'90vw'}
       style={{top: '5vh'}}
       footer={[

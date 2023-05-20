@@ -22,7 +22,7 @@ const Header: FC = () => {
     items.unshift({
       label: (<div>Управление пользователями</div>),
       key: 'configure users',
-      onClick: (e) => userStore.isShowConfigureUsersModal = true
+      onClick: (e) => userStore.openConfigureUserModal()
     })
   }
 

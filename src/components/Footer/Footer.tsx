@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from 'react'
 import * as S from './Footer.styles'
-import Block from '../UI/Block'
+import { Block } from '..'
 
 interface IProps {
   children?: ReactNode

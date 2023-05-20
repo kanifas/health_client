@@ -18,6 +18,7 @@ export const Form = styled(AntForm)<IFormProps>`
   padding: 50px 20px 20px;
   min-width: 500px;
   background: #fff;
+  transform: translateY(-5vh);
 
   .signin {
     display: ${({ formtype }) => formtype !== 'signin' ? 'none' : 'block'}

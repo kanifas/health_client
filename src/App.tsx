@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { observer } from 'mobx-react-lite'
-import Auth from './components/Auth'
-import Layout from './components/Layout'
+import { Auth } from './components'
+import { Layout } from './components'
 import { LoadingOutlined } from '@ant-design/icons'
 import { useStore } from './store'
 

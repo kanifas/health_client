@@ -125,4 +125,12 @@ export default class UserStore {
       return new Error(err.response?.data?.message)
     }
   }
+
+  openConfigureUserModal() {
+    this.isShowConfigureUsersModal = true
+  }
+
+  closeConfigureUserModal() {
+    this.isShowConfigureUsersModal = false
+  }
 }
