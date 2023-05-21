@@ -14,4 +14,8 @@ export default class UserService {
   static async fetchUsers(): Promise<AxiosResponse<IUser[]>> {
     return $api.get<IUser[]>('/users')
   }
+
+  static async addUserToInviteList(body: IUser): Promise<AxiosResponse<IUser>> {
+    return $api.post<IUser>('/user/invite')
+  }
 }

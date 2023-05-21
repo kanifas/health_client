@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import Layout from './Layout.styles'
-import { Header, Content, Footer, ConfigureUsersModal } from '..'
+import { Header, Content, Footer, ControlModal } from '..'
 
 const LayoutComponent: FC = () => {
   return (
@@ -8,7 +8,7 @@ const LayoutComponent: FC = () => {
       <Header />
       <Content />
       <Footer />
-      <ConfigureUsersModal />
+      <ControlModal />
     </Layout>
   )
 }

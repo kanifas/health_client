@@ -5,6 +5,17 @@ export interface ISignupFormFields {
   phone: string
   location?: string
   speciality?: string
+  settings?: object
+}
+
+export interface ISignupFormFields {
+  email: string
+  password: string
+  name: string
+  phone: string
+  location?: string
+  speciality?: string
+  settings?: object
 }
 
 export interface IUserNotification {

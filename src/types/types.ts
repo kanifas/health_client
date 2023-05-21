@@ -8,17 +8,18 @@ export interface IUserSettings {
 export interface IUser {
   id: string
   name: string
-  nickname: string
   email: string
-  location: string
   phone: string
   role: number
-  speciality: {
+  location?: string
+  photo?: string
+  speciality?: {
     id: string,
     name: string,
   }
   isEmailConfirmed: boolean
   settings: IUserSettings
+  isNew?: boolean
 }
 
 export interface IAuthResponse {

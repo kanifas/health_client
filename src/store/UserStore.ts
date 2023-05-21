@@ -133,4 +133,19 @@ export default class UserStore {
   closeConfigureUserModal() {
     this.isShowConfigureUsersModal = false
   }
+
+  addNewUser(user: IUser) {
+    this.users.push(user)
+  }
+  
+  async saveNewUser(user: IUser) {
+    console.log(user);
+    const response = await UserService.addUserToInviteList(user)
+    // добавить в БД
+    // обновить юзеров (fetch)
+  }
+
+  deleteNewUser(id: string) {
+    this.users = this.users.filter(u => u.id !== id)
+  }
 }

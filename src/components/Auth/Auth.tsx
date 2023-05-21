@@ -3,17 +3,9 @@ import React, { FC, useCallback, useState, BaseSyntheticEvent } from 'react'
 import { Button, Form, Input, Space, Typography, Tooltip } from 'antd'
 import { InfoCircleOutlined } from '@ant-design/icons'
 import { observer } from 'mobx-react-lite'
+import { IFormData } from './types'
 import { useStore } from '../../store'
 import * as S from './Auth.styles'
-
-interface IFormData {
-  name: string
-  email: string
-  password: string
-  phone: string
-  location?: string
-  speciality?: string
-}
 
 const AuthForm: FC = () => {
   const { userStore } = useStore()
