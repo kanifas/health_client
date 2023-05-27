@@ -1,11 +1,11 @@
 import { createContext, useContext } from 'react'
 import UserStore from './UserStore'
-import SpecialityStore from './SpecialityStore'
+import OccupationStore from './OccupationStore'
 import CalendarStore from './CalendarStore'
 
 const store = {
   userStore: new UserStore(),
-  specialityStore: new SpecialityStore(),
+  occupationStore: new OccupationStore(),
   calendarStore: new CalendarStore(),
 };
 

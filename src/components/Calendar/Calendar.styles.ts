@@ -1,5 +1,11 @@
 import styled from 'styled-components'
 
+export const RemoveTabsMargin = styled.div`
+  .ant-tabs-nav {
+    margin: 0;
+  }
+`
+
 export const Table = styled.table`
   width: 100%;
   border-collapse: collapse;

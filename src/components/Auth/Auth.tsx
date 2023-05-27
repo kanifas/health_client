@@ -15,7 +15,7 @@ const AuthForm: FC = () => {
     password: '',
     phone: '',
     location: '',
-    speciality: '',
+    occupation: [],
   })
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const [formType, setFormType] = useState<string>('signin')
@@ -75,7 +75,7 @@ const AuthForm: FC = () => {
   }, [formData, formType])
 
 
-  const { name, email, password, phone, location, speciality } = formData
+  const { name, email, password, phone, location, occupation } = formData
   
   return (
     <S.Background>
@@ -132,9 +132,9 @@ const AuthForm: FC = () => {
           <Form.Item label="Специализация">
             <Input
               placeholder="Хирург, терапевт и т.д."
-              name="speciality"
+              name="occupation"
               onChange={handleInputChange}
-              value={speciality}
+              value={occupation}
               suffix={
                 <Tooltip title="Можно заполнить позже. Если Вы не принимаете пациентов (например, вы только администрируете), то заполнять не надо, иначе для вас будет создано расписание!">
                   <InfoCircleOutlined style={{ color: 'orange' }} />

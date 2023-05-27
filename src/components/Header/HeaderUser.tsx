@@ -9,7 +9,7 @@ import { getRoleName } from '../../utils/user/user'
 
 const Header: FC = () => {
   const { userStore } = useStore()
-  const { name, role, speciality } = userStore.user
+  const { name, role, occupation } = userStore.user
   
   const items: MenuProps['items'] = [
     {key: 'slots', label: (<div>Записи пациентов</div>)},
@@ -28,7 +28,7 @@ const Header: FC = () => {
 
   return (
     <Space size="middle">
-      {/* {`${getRoleName(role)} ${speciality.name ? `(${speciality.name})` : ''}`} */}
+      {/* {`${getRoleName(role)} ${occupation.name ? `(${occupation.name})` : ''}`} */}
       {`${getRoleName(userStore.user.role)}`}
 
       <Dropdown menu={{ items }}>

@@ -79,6 +79,7 @@ export default class UserStore {
       this.setAuth(true)
       this.setUser(user)
       console.log(user)
+      return user
     } catch (err: any) {
       console.log(err.response?.data?.message)
       return new Error(err.response?.data?.message)
@@ -96,6 +97,7 @@ export default class UserStore {
       const response = await UserService.deleteUser(id)
       console.log(response)
       await this.fetchUsers()
+      return response
     } catch (err: any) {
       console.log(err.response?.data?.message)
       return new Error(err.response?.data?.message)
@@ -107,6 +109,7 @@ export default class UserStore {
       const response = await UserService.updateUser(fields)
       console.log(response)
       await this.fetchUsers()
+      return response
     } catch (err: any) {
       console.log(err.response?.data?.message)
       return new Error(err.response?.data?.message)
@@ -140,7 +143,7 @@ export default class UserStore {
   
   async saveNewUser(user: IUser) {
     console.log(user);
-    const response = await UserService.addUserToInviteList(user)
+    //const response = await UserService.addUserToInviteList(user)
     // добавить в БД
     // обновить юзеров (fetch)
   }
