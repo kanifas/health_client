@@ -4,5 +4,5 @@ export interface IFormData {
   password: string
   phone: string
   location?: string
-  speciality?: string
+  occupation?: string[]
 }

@@ -8,7 +8,7 @@ import { monthNames } from '../../utils/constants'
 
 const Header: FC = () => {
   const { userStore, calendarStore } = useStore()
-  const { name, role, speciality } = userStore.user
+  const { name, role, occupation } = userStore.user
 
   return (
     <S.Header>

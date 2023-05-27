@@ -13,13 +13,9 @@ export interface IUser {
   role: number
   location?: string
   photo?: string
-  speciality?: {
-    id: string,
-    name: string,
-  }
+  occupation?: IOccupation[]
   isEmailConfirmed: boolean
   settings: IUserSettings
-  isNew?: boolean
 }
 
 export interface IAuthResponse {
@@ -33,7 +29,7 @@ export interface IAuthError extends Error {
   errors: any[]
 }
 
-export interface ISpeciality {
+export interface IOccupation {
   id: string
   name: string
 }

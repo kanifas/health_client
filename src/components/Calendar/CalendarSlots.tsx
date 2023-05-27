@@ -25,7 +25,8 @@ const Content: FC<IProps> = ({ hoursFrom, hoursTo, minutesFrom, minutesTo, slotS
   let stepM = minutesFrom
   const times = Array(slotsPerDay).fill(1).map((_, index) => {
     if (index === 0) {
-      return <S.Th>{`${stepH}:${stepM < 9 ? stepM + '0' : stepM}`}</S.Th>
+      const text = `${stepH}:${stepM < 9 ? stepM + '0' : stepM}`
+      return <S.Th key={text}>{text}</S.Th>
     }
     
     stepM += slotSize
@@ -34,7 +35,8 @@ const Content: FC<IProps> = ({ hoursFrom, hoursTo, minutesFrom, minutesTo, slotS
       stepM = 0
     }
 
-    return <S.Th>{`${stepH}:${stepM < 9 ? stepM + '0' : stepM}`}</S.Th>    
+    const text = `${stepH}:${stepM < 9 ? stepM + '0' : stepM}`
+    return <S.Th key={text}>{text}</S.Th>    
   })
 
   const dayInMonth = getDaysInMonth(calendarStore.year, calendarStore.month)
@@ -51,12 +53,12 @@ const Content: FC<IProps> = ({ hoursFrom, hoursTo, minutesFrom, minutesTo, slotS
       <S.Tbody>
         {Array(dayInMonth).fill(1).map((_, day) => {
           return (
-            <S.Tr>
+            <S.Tr key={day}>
               {Array(times.length + 1).fill(1).map((_, index) => {
                 if (index === 0) {
-                  return <S.Td>{day + 1}</S.Td>
+                  return <S.Td key={index}>{day + 1}</S.Td>
                 }
-                return <S.Td></S.Td>
+                return <S.Td key={index}></S.Td>
               })}
             </S.Tr>
           )
